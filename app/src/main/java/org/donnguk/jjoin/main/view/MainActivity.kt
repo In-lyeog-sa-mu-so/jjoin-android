@@ -1,6 +1,7 @@
 package org.donnguk.jjoin.main.view
 
 import android.view.View
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -43,6 +44,10 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
                 onSupportNavigateUp()
             }
         })
+
+        binding.notificationImageView.setOnClickListener {
+            Toast.makeText(this, "알림", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun afterOnCreate() {

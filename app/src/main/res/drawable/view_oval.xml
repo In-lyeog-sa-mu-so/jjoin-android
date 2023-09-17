@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#FFEFEFF4">
     <item>
-        <shape android:shape="rectangle">
-            <corners android:radius="45dp" />
-        </shape>
+        <layer-list>
+            <item>
+                <shape android:shape="oval">
+                    <solid android:color="@color/white" />
+                </shape>
+            </item>
+            <item>
+                <shape android:shape="oval">
+                    <solid android:color="@color/white" />
+                </shape>
+            </item>
+        </layer-list>
     </item>
-</layer-list>
+</ripple>
