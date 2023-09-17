@@ -65,7 +65,7 @@ class HomeViewModel: BaseViewModel() {
                 id = 775,
                 time = "2021.10.10 18:00",
                 title = "동국대학교 컴퓨터공학과 학생회 2021년 1학기 정기총회"
-            )
+            ),
         )
 
         _clubCards.value = listOf(
@@ -94,6 +94,12 @@ class HomeViewModel: BaseViewModel() {
                 tag = "#코딩 #프로젝트"
             ),
         )
+    }
+
+    fun agreeSchedule(id: Int, isAgree: Boolean) {
+        // repository 통신 해야함
+        // schedules에서 해당 id를 가진 schedule 같은 값을 제거함
+        _scheduleCards.value = _scheduleCards.value?.filter { it.id != id }
     }
 
     class HomeViewModelFactory: ViewModelProvider.Factory {

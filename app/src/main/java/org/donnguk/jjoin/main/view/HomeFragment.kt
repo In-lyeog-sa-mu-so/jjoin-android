@@ -57,9 +57,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
             layoutManager = LinearLayoutManager(context)
             adapter = ScheduleCardAdapter(
                 agreeCallback = { id: Int ->
+                    viewModel.agreeSchedule(id = id, isAgree = true)
                     Toast.makeText(context, "agreeCallback $id", Toast.LENGTH_SHORT).show()
                 },
                 disAgreeCallback = { id: Int ->
+                    viewModel.agreeSchedule(id = id, isAgree = false)
                     Toast.makeText(context, "disAgreeCallback $id", Toast.LENGTH_SHORT).show()
                 },
             )
