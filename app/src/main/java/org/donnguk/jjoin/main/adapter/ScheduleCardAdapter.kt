@@ -5,10 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import org.donnguk.jjoin.databinding.ItemSelectScheduleBinding
-import org.donnguk.jjoin.main.model.ClubCard
+import org.donnguk.jjoin.databinding.ItemScheduleBinding
 import org.donnguk.jjoin.main.model.ScheduleCard
-import timber.log.Timber
 
 class ScheduleCardAdapter(
     private val agreeCallback: (Int) -> Unit,
@@ -28,7 +26,7 @@ class ScheduleCardAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ScheduleCardViewHolder {
         return ScheduleCardViewHolder(
-            ItemSelectScheduleBinding.inflate(
+            ItemScheduleBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false))
@@ -38,7 +36,7 @@ class ScheduleCardAdapter(
         holder.bind(getItem(position))
     }
 
-    inner class ScheduleCardViewHolder(val binding: ItemSelectScheduleBinding)
+    inner class ScheduleCardViewHolder(val binding: ItemScheduleBinding)
         : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(scheduleCard: ScheduleCard) {

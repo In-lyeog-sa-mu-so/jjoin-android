@@ -1,14 +1,11 @@
 package org.donnguk.jjoin.main.model
 
-data class ClubCard(
+data class AccededClubCard(
     val id: Int,
     val title: String,
     val description: String,
+    val leaderName: String,
     val number: Int,
     val department: String,
-    val tag: String,
-) {
-    fun numberToString(): String {
-        return "$number 명"
-    }
-}
+    val recentNotice: String,
+)

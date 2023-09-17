@@ -7,6 +7,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.viewpharm.yakal.base.BaseFragment
 import org.donnguk.jjoin.R
 import org.donnguk.jjoin.databinding.FragmentHomeBinding
+import org.donnguk.jjoin.main.adapter.AccededClubCardAdapter
 import org.donnguk.jjoin.main.adapter.ClubCardAdapter
 import org.donnguk.jjoin.main.adapter.ScheduleCardAdapter
 import org.donnguk.jjoin.main.viewmodel.HomeViewModel
@@ -38,7 +39,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
             orientation = ViewPager2.ORIENTATION_HORIZONTAL
         }.run {
             // ViewPager2는 RecyclerView의 Adapter 사용
-            adapter = ClubCardAdapter(
+            adapter = AccededClubCardAdapter(
                 detailCallback = { id: Int ->
                     Toast.makeText(context, "detailCallback $id", Toast.LENGTH_SHORT).show()
                 },
@@ -64,6 +65,16 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
             )
             setHasFixedSize(true)
         }
+
+        binding.recommendClubRecyclerView.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = ClubCardAdapter(
+                clickCallback = { id: Int ->
+                    Toast.makeText(context, "clickCallback $id", Toast.LENGTH_SHORT).show()
+                },
+            )
+            setHasFixedSize(true)
+        }
     }
 
     override fun initViewModel() {
@@ -77,8 +88,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
             (binding.noSelectScheduleRecyclerView.adapter as ScheduleCardAdapter).submitList(it)
         }
 
+        viewModel.accededClubCards.observe(this) {
+            (binding.clubCardViewPager.adapter as AccededClubCardAdapter).submitList(it)
+        }
+
         viewModel.clubCards.observe(this) {
-            (binding.clubCardViewPager.adapter as ClubCardAdapter).submitList(it)
+            (binding.recommendClubRecyclerView.adapter as ClubCardAdapter).submitList(it)
         }
     }
 

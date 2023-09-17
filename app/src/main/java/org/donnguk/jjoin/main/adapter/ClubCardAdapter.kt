@@ -8,9 +8,7 @@ import org.donnguk.jjoin.databinding.ItemClubBinding
 import org.donnguk.jjoin.main.model.ClubCard
 
 class ClubCardAdapter(
-    private val detailCallback: (Int) -> Unit,
-    private val shareCallback: (Int) -> Unit,
-    private val exitCallback: (Int) -> Unit,)
+    private val clickCallback: (Int) -> Unit,)
     : ListAdapter<ClubCard, ClubCardAdapter.ClubCardViewHolder>(ClubCardDiffUtil) {
     companion object {
         object ClubCardDiffUtil : androidx.recyclerview.widget.DiffUtil.ItemCallback<ClubCard>() {
@@ -40,16 +38,8 @@ class ClubCardAdapter(
             binding.clubCard = clubCard
             binding.executePendingBindings()
 
-            binding.clubDetailButton.setOnClickListener {
-                detailCallback(clubCard.id)
-            }
-
-            binding.clubShareButton.setOnClickListener {
-                shareCallback(clubCard.id)
-            }
-
-            binding.clubExitButton.setOnClickListener {
-                exitCallback(clubCard.id)
+            itemView.setOnClickListener {
+                clickCallback(clubCard.id)
             }
         }
     }
