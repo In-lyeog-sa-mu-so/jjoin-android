@@ -41,11 +41,13 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
                 R.id.homeFragment -> {
                     binding.toolbarTextView.visibility = android.view.View.VISIBLE
                     binding.toolbarImageView.visibility = android.view.View.VISIBLE
+                    binding.bottomNaviBar.visibility = android.view.View.VISIBLE
                     binding.toolbarTextView.text = "홈"
                 }
                 R.id.notificationFragment -> {
                     binding.toolbarTextView.visibility = android.view.View.GONE
                     binding.toolbarImageView.visibility = android.view.View.GONE
+                    binding.bottomNaviBar.visibility = android.view.View.GONE
                     supportActionBar?.setDisplayHomeAsUpEnabled(true)
                 }
             }
