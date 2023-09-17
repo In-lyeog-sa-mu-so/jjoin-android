@@ -4,7 +4,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
-import com.viewpharm.yakal.base.BaseFragment
+import org.donnguk.jjoin.base.BaseFragment
 import org.donnguk.jjoin.R
 import org.donnguk.jjoin.databinding.FragmentHomeBinding
 import org.donnguk.jjoin.main.adapter.AccededClubCardAdapter
@@ -84,15 +84,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
 
     override fun initListener(view: View) {
         super.initListener(view)
-        viewModel.scheduleCards.observe(this) {
+        viewModel.scheduleCards.observe(viewLifecycleOwner) {
             (binding.noSelectScheduleRecyclerView.adapter as ScheduleCardAdapter).submitList(it)
         }
 
-        viewModel.accededClubCards.observe(this) {
+        viewModel.accededClubCards.observe(viewLifecycleOwner) {
             (binding.clubCardViewPager.adapter as AccededClubCardAdapter).submitList(it)
         }
 
-        viewModel.clubCards.observe(this) {
+        viewModel.clubCards.observe(viewLifecycleOwner) {
             (binding.recommendClubRecyclerView.adapter as ClubCardAdapter).submitList(it)
         }
     }

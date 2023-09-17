@@ -1,4 +1,4 @@
-package com.viewpharm.yakal.base
+package org.donnguk.jjoin.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
-import androidx.navigation.NavArgs
 
 abstract class BaseFragment<T: ViewDataBinding, R: ViewModel>
     (@LayoutRes private val layoutId: Int): Fragment() {

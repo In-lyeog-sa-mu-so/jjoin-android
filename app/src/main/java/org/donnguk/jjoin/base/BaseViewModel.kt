@@ -1,4 +1,4 @@
-package com.viewpharm.yakal.base
+package org.donnguk.jjoin.base
 
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable

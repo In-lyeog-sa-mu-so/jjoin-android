@@ -7,5 +7,18 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="org.donnguk.jjoin.main.view.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/slide_to_left"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slide_to_right"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="org.donnguk.jjoin.main.view.NotificationFragment"
+        android:label="NotificationFragment" />
 </navigation>
