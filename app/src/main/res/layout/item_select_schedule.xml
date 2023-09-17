@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="schedule"
+            type="org.donnguk.jjoin.main.model.ScheduleCard" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:strokeWidth="1dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/scheduleTimeColorView"
+                android:layout_width="20dp"
+                android:layout_height="80dp"
+                android:background="@color/gray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:orientation="vertical"
+                android:gravity="center_vertical|start"
+                app:layout_constraintStart_toEndOf="@id/scheduleTimeColorView"
+                app:layout_constraintTop_toTopOf="@id/scheduleTimeColorView"
+                app:layout_constraintBottom_toBottomOf="@id/scheduleTimeColorView"
+                app:layout_constraintEnd_toEndOf="@id/textGuideline">
+
+                <TextView
+                    android:id="@+id/scheduleTimeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="오후 6:00"
+                    android:textSize="22sp"
+                    style="@style/default_font" />
+
+                <TextView
+                    android:id="@+id/scheduleTitleTextView"
+                    style="@style/default_font"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="학생회 정기회의"
+                    android:textSize="15sp"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/agreeButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_baseline_check_24"
+                android:background="@drawable/btn_agree"
+                app:layout_constraintTop_toTopOf="@id/scheduleTimeColorView"
+                app:layout_constraintBottom_toBottomOf="@id/scheduleTimeColorView"
+                app:layout_constraintEnd_toStartOf="@id/disAgreeButton" />
+
+            <ImageButton
+                android:id="@+id/disAgreeButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="10dp"
+
+                android:src="@drawable/ic_baseline_clear_24"
+                android:background="@drawable/btn_agree"
+                app:layout_constraintTop_toTopOf="@id/scheduleTimeColorView"
+                app:layout_constraintBottom_toBottomOf="@id/scheduleTimeColorView"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/textGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="317dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>
