@@ -1,13 +1,11 @@
-package com.viewpharm.yakal.base
+package org.donnguk.jjoin.base
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModel
-import timber.log.Timber
 
 abstract class BaseActivity<T: ViewDataBinding, R: ViewModel>
     (@LayoutRes private val layoutId: Int): AppCompatActivity() {
