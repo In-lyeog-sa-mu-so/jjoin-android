@@ -1,4 +1,4 @@
-package org.donnguk.jjoin.base
+package org.donnguk.jjoin.base.event
 
 open class Event<out T>(private val content: T) {
     var hasBeenHandled = false

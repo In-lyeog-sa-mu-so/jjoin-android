@@ -1,4 +1,4 @@
-package org.donnguk.jjoin.base
+package org.donnguk.jjoin.base.view
 
 import android.os.Bundle
 import androidx.annotation.LayoutRes

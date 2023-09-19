@@ -2,7 +2,7 @@ package org.donnguk.jjoin.club.view
 
 import com.google.android.material.tabs.TabLayoutMediator
 import org.donnguk.jjoin.R
-import org.donnguk.jjoin.base.BaseActivity
+import org.donnguk.jjoin.base.view.BaseActivity
 import org.donnguk.jjoin.club.adapter.PagerAdapter
 import org.donnguk.jjoin.club.viewmodel.ClubDetailViewModel
 import org.donnguk.jjoin.databinding.ActivityClubDetailBinding

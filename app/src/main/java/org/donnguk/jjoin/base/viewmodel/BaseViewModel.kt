@@ -1,4 +1,4 @@
-package org.donnguk.jjoin.base
+package org.donnguk.jjoin.base.viewmodel
 
 import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable

@@ -5,7 +5,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
-import org.donnguk.jjoin.base.BaseFragment
+import org.donnguk.jjoin.base.view.BaseFragment
 import org.donnguk.jjoin.R
 import org.donnguk.jjoin.club.view.ClubDetailActivity
 import org.donnguk.jjoin.databinding.FragmentHomeBinding

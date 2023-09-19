@@ -256,6 +256,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="@drawable/view_rectangle_verti"
+                app:tabTextAppearance="@style/club_tab_layout"
+                app:tabIndicatorColor="@color/blue"
+                app:tabSelectedTextColor="@color/blue"
+                app:tabRippleColor="@android:color/transparent"
                 app:layout_anchor="@+id/appBarLayout"
                 app:layout_anchorGravity="bottom|center" />
         </com.google.android.material.appbar.AppBarLayout>
