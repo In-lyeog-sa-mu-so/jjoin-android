@@ -109,7 +109,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
-                        android:background="@drawable/view_rectangle_gray"
+                        android:background="@drawable/view_rectangle_sky_blue"
                         android:padding="5dp"
                         app:layout_constraintEnd_toStartOf="@id/clubScaleLayout"
                         app:layout_constraintStart_toStartOf="@id/clubDescriptionTextView"
@@ -144,7 +144,7 @@
                         android:id="@+id/clubScaleLayout"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/view_rectangle_gray"
+                        android:background="@drawable/view_rectangle_sky_blue"
                         android:padding="5dp"
                         app:layout_constraintEnd_toEndOf="@id/clubDescriptionTextView"
                         app:layout_constraintStart_toEndOf="@id/clubLeaderLayout"
@@ -182,7 +182,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
-                        android:background="@drawable/view_rectangle_gray"
+                        android:background="@drawable/view_rectangle_sky_blue"
                         android:padding="5dp"
                         app:layout_constraintEnd_toStartOf="@id/clubDepartmentLayout"
                         app:layout_constraintStart_toStartOf="@id/clubLeaderLayout"
@@ -217,7 +217,7 @@
                         android:id="@+id/clubDepartmentLayout"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/view_rectangle_gray"
+                        android:background="@drawable/view_rectangle_sky_blue"
                         android:padding="5dp"
                         app:layout_constraintEnd_toEndOf="@id/clubDescriptionTextView"
                         app:layout_constraintStart_toEndOf="@id/clubOpenDateLayout"
@@ -248,6 +248,21 @@
                             android:text="@{viewModel.club.department}"
                             android:textSize="15sp" />
                     </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"
+                        android:text="가입하기"
+                        android:fontFamily="@font/bmdohyeon"
+                        android:textSize="25sp"
+                        android:textColor="@drawable/btn_club_text"
+                        android:background="@drawable/btn_club_join"
+                        android:enabled="@{viewModel.club.isJoinEnable}"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        app:layout_constraintTop_toBottomOf="@id/clubDepartmentLayout"
+                        app:layout_constraintBottom_toBottomOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 

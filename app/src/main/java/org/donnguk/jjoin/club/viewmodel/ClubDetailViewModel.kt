@@ -27,7 +27,8 @@ class ClubDetailViewModel: BaseViewModel() {
             leader = "박재형",
             memberNum = "107명",
             openDate = LocalDate.now(),
-            department = "학과"
+            department = "학과",
+            isJoinEnable = true
         )
     }
 

@@ -11,6 +11,7 @@ data class Club(
     val memberNum: String,
     val openDate: LocalDate,
     val department: String,
+    val isJoinEnable: Boolean,
 ) {
     fun getDate(): String {
         return "${openDate.year}년 ${openDate.monthValue}월"

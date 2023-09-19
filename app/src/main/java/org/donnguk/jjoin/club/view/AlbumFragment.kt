@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import org.donnguk.jjoin.R
 import org.donnguk.jjoin.base.view.BaseFragment
 import org.donnguk.jjoin.club.adapter.AlbumAdapter
-import org.donnguk.jjoin.club.adapter.AlbumGridSpacingItemDecoration
+import org.donnguk.jjoin.club.util.AlbumGridSpacingItemDecoration
 import org.donnguk.jjoin.club.viewmodel.AlbumViewModel
 import org.donnguk.jjoin.databinding.FragmentAlbumBinding
 class AlbumFragment : BaseFragment<FragmentAlbumBinding, AlbumViewModel>(R.layout.fragment_album) {

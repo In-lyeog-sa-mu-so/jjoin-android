@@ -1,4 +1,4 @@
-package org.donnguk.jjoin.club.adapter
+package org.donnguk.jjoin.club.util
 
 import android.graphics.Rect
 import android.view.View
