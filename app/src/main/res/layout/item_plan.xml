@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="plan"
+            type="org.donnguk.jjoin.club.model.Plan" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:strokeWidth="1dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <View
+                android:id="@+id/scheduleTimeColorView"
+                android:layout_width="20dp"
+                android:layout_height="95dp"
+                android:background="@color/gray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:orientation="vertical"
+                android:paddingEnd="10dp"
+                android:gravity="center_vertical|start"
+                app:layout_constraintStart_toEndOf="@id/scheduleTimeColorView"
+                app:layout_constraintTop_toTopOf="@id/scheduleTimeColorView"
+                app:layout_constraintBottom_toBottomOf="@id/scheduleTimeColorView"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <TextView
+                    android:id="@+id/titleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="@{plan.title}"
+                    android:textSize="22sp"
+                    style="@style/default_font" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:id="@+id/startDateTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{plan.getStartDateStr()}"
+                        android:textSize="12sp"
+                        android:textColor="@color/gray"
+                        style="@style/default_font" />
+
+                    <TextView
+                        android:id="@+id/timeTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="~"
+                        android:textSize="12sp"
+                        android:textColor="@color/gray"
+                        style="@style/default_font"
+                        android:layout_marginStart="5dp" />
+
+                    <TextView
+                        android:id="@+id/dateTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{plan.getEndDateStr()}"
+                        android:textSize="12sp"
+                        android:textColor="@color/gray"
+                        style="@style/default_font"
+                        android:layout_marginStart="5dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:id="@+id/agreeTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="참가"
+                        android:textSize="15sp"
+                        android:textColor="@color/gray"
+                        style="@style/default_font" />
+
+                    <TextView
+                        android:id="@+id/disAgreeTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="불참"
+                        android:textSize="15sp"
+                        android:textColor="@color/gray"
+                        style="@style/default_font"
+                        android:layout_marginStart="10dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>
