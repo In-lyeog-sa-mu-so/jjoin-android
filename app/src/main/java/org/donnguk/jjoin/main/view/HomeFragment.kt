@@ -1,11 +1,13 @@
 package org.donnguk.jjoin.main.view
 
+import android.content.Intent
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
-import org.donnguk.jjoin.base.BaseFragment
+import org.donnguk.jjoin.base.view.BaseFragment
 import org.donnguk.jjoin.R
+import org.donnguk.jjoin.club.view.ClubDetailActivity
 import org.donnguk.jjoin.databinding.FragmentHomeBinding
 import org.donnguk.jjoin.main.adapter.AccededClubCardAdapter
 import org.donnguk.jjoin.main.adapter.ClubCardAdapter
@@ -41,7 +43,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
             // ViewPager2는 RecyclerView의 Adapter 사용
             adapter = AccededClubCardAdapter(
                 detailCallback = { id: Int ->
-                    Toast.makeText(context, "detailCallback $id", Toast.LENGTH_SHORT).show()
+                    // ClubDetailActivity로 이동
+                    val intent: Intent = Intent(context, ClubDetailActivity::class.java).apply {
+                        putExtra("id", id)
+                    }
+                    startActivity(intent)
                 },
                 shareCallback = { id: Int ->
                     Toast.makeText(context, "shareCallback $id", Toast.LENGTH_SHORT).show()

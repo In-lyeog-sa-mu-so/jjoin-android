@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import org.donnguk.jjoin.base.BaseViewModel
-import org.donnguk.jjoin.base.Event
+import org.donnguk.jjoin.base.viewmodel.BaseViewModel
+import org.donnguk.jjoin.base.event.Event
 
 class MainViewModel: BaseViewModel() {
     companion object {

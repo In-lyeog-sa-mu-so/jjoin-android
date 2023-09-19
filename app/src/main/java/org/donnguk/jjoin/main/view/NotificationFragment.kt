@@ -4,7 +4,7 @@ import android.view.View
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import org.donnguk.jjoin.base.BaseFragment
+import org.donnguk.jjoin.base.view.BaseFragment
 import org.donnguk.jjoin.R
 import org.donnguk.jjoin.databinding.FragmentNotificationBinding
 import org.donnguk.jjoin.main.adapter.NotificationAdapter

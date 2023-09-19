@@ -1,12 +1,11 @@
 package org.donnguk.jjoin.main.view
 
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
-import org.donnguk.jjoin.base.BaseActivity
+import org.donnguk.jjoin.base.view.BaseActivity
 import org.donnguk.jjoin.R
 import org.donnguk.jjoin.databinding.ActivityMainBinding
 import org.donnguk.jjoin.main.viewmodel.MainViewModel
