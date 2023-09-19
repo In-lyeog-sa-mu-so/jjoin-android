@@ -13,8 +13,9 @@
     <!--        android:icon="@drawable/ic_custom_community"-->
     <!--        android:enabled="true"-->
     <!--        android:title="커뮤니티" />-->
-    <item android:id="@+id/profileMainFragment"
+    <item android:id="@+id/profileFragment"
         android:icon="@drawable/ic_custom_profile"
         android:enabled="true"
-        android:title="내 정보" />
+        android:alphabeticModifiers=""
+        android:title="마이 페이지" />
 </menu>

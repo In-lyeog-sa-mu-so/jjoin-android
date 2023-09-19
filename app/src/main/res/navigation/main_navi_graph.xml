@@ -21,4 +21,8 @@
         android:id="@+id/notificationFragment"
         android:name="org.donnguk.jjoin.main.view.NotificationFragment"
         android:label="NotificationFragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="org.donnguk.jjoin.main.view.ProfileFragment"
+        android:label="ProfileFragment" />
 </navigation>

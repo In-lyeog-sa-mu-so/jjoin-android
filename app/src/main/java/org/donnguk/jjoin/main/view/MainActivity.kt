@@ -41,7 +41,15 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
                     binding.toolbarTextView.visibility = android.view.View.VISIBLE
                     binding.toolbarImageView.visibility = android.view.View.VISIBLE
                     binding.bottomNaviBar.visibility = android.view.View.VISIBLE
+                    supportActionBar?.setDisplayHomeAsUpEnabled(false)
                     binding.toolbarTextView.text = "홈"
+                }
+                R.id.profileFragment -> {
+                    binding.toolbarTextView.visibility = android.view.View.VISIBLE
+                    binding.toolbarImageView.visibility = android.view.View.VISIBLE
+                    binding.bottomNaviBar.visibility = android.view.View.VISIBLE
+                    supportActionBar?.setDisplayHomeAsUpEnabled(false)
+                    binding.toolbarTextView.text = "마이 페이지"
                 }
                 R.id.notificationFragment -> {
                     binding.toolbarTextView.visibility = android.view.View.GONE
@@ -58,7 +66,6 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
 
     override fun initViewModel() {
         super.initViewModel()
-
     }
 
     override fun initListener() {
@@ -80,5 +87,10 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
+    fun onLogBackStack() {
+        val backStackEntryCount = supportFragmentManager.backStackEntryCount
+        Timber.d("backStackEntryCount: $backStackEntryCount")
     }
 }
