@@ -5,10 +5,12 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import org.donnguk.jjoin.R
 import org.donnguk.jjoin.base.view.BaseFragment
 import org.donnguk.jjoin.databinding.FragmentCalenderBinding
 import org.donnguk.jjoin.main.adapter.CalenderDayAdapter
+import org.donnguk.jjoin.main.adapter.ScheduleCardAdapter
 import org.donnguk.jjoin.main.viewmodel.CalenderViewModel
 
 class CalenderFragment : BaseFragment<FragmentCalenderBinding, CalenderViewModel>(R.layout.fragment_calender) {
@@ -26,6 +28,22 @@ class CalenderFragment : BaseFragment<FragmentCalenderBinding, CalenderViewModel
                 }
             )
         }
+
+        binding.scheduleRecyclerView.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = ScheduleCardAdapter(
+                agreeCallback = { id: Int ->
+                    viewModel.agreeSchedule(id, true)
+                    Toast.makeText(context, "agreeCallback $id", Toast.LENGTH_SHORT).show()
+                },
+                disAgreeCallback = { id: Int ->
+                    viewModel.agreeSchedule(id, false)
+                    Toast.makeText(context, "disAgreeCallback $id", Toast.LENGTH_SHORT).show()
+                },
+            )
+        }
+
+
     }
 
     override fun initViewModel() {
@@ -37,6 +55,10 @@ class CalenderFragment : BaseFragment<FragmentCalenderBinding, CalenderViewModel
         super.initListener(view)
         viewModel.calenderDays.observe(viewLifecycleOwner) {
             (binding.calendarRecyclerView.adapter as CalenderDayAdapter).submitList(it)
+        }
+
+        viewModel.scheduleCards.observe(viewLifecycleOwner) {
+            (binding.scheduleRecyclerView.adapter as ScheduleCardAdapter).submitList(it)
         }
     }
 

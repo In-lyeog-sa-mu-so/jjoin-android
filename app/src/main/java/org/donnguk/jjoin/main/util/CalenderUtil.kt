@@ -113,7 +113,11 @@ object CalenderUtil {
                     date = currentDate,
                     isSelect = false,
                     existInMonth = true,
-                    clubs = listOf()
+                    clubs = when (val mod = currentDate.dayOfMonth % 3) {
+                        0 -> listOf("1", "2", "3")
+                        1 -> listOf("1", "2", "")
+                        else -> listOf("1", "", "")
+                    }
                 )
             )
             currentDate = currentDate.plusDays(1)
