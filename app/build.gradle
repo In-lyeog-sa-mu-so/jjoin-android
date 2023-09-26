@@ -71,6 +71,8 @@ dependencies {
     implementation 'androidx.datastore:datastore-preferences:1.0.0'
     implementation 'com.google.dagger:dagger:2.47'
     implementation 'com.google.firebase:firebase-messaging-ktx:23.2.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.2'
     kapt 'com.google.dagger:dagger-compiler:2.47'
 
     // Kakao SDK
@@ -114,4 +116,5 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
 }

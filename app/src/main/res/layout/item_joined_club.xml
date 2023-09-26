@@ -20,7 +20,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/ic_club_logo_temp"
+            android:src="@drawable/temp_ic_club_logo"
             />
 
         <TextView

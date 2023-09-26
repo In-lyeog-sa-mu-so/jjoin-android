@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="org.donnguk.jjoin.main.viewmodel.ProfileEditViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profileEditLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".main.view.ProfileFragment">
+
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/default_font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="프로필 편집"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/editProfileImageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/temp_ic_club_logo"
+            app:layout_constraintEnd_toEndOf="@+id/textView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/editProfileImageButton"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:text="프로필 사진 변경"
+            android:textSize="15dp"
+            style="@style/default_font"
+
+            android:background="@null"
+            app:layout_constraintEnd_toEndOf="@+id/editProfileImageView"
+            app:layout_constraintStart_toStartOf="@+id/editProfileImageView"
+            app:layout_constraintTop_toBottomOf="@+id/editProfileImageView"
+            android:drawableStart="@drawable/baseline_image_search_24"
+            />
+
+
+        <TextView
+            android:id="@+id/nameTextView"
+            style="@style/default_font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:text="자기소개"
+            android:textSize="18dp"
+            android:layout_marginStart="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editProfileImageView" />
+
+        <EditText
+            android:layout_width="240dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="24dp"
+            android:background="@drawable/edit_text_rectangle"
+            android:textSize="10dp"
+            android:maxLines="2"
+            app:layout_constraintBottom_toBottomOf="@+id/nameTextView"
+            app:layout_constraintStart_toEndOf="@+id/nameTextView"
+            app:layout_constraintTop_toTopOf="@+id/nameTextView"
+            app:layout_constraintVertical_bias="0.155" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/editProfileButton"
+            style="@style/default_font"
+            android:layout_width="230dp"
+            android:layout_height="48dp"
+            android:background="@drawable/background_rectangle"
+            android:gravity="center|center_vertical"
+            android:text="저장하기"
+            android:textSize="18dp"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

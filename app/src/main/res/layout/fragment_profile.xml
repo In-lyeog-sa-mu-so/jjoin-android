@@ -11,32 +11,35 @@
     </data>
 
     <FrameLayout
+        android:id="@+id/profileContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".main.view.ProfileFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/profileLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profileImageView"
                 android:layout_width="120dp"
-                android:layout_height="150dp"
+                android:layout_height="120dp"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"
-                android:src="@drawable/ic_club_logo_temp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:src="@drawable/temp_ic_club_logo"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/userNameTextView"
+                style="@style/default_font"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:text="박재형"
-                style="@style/default_font"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@id/profileImageView"
@@ -44,11 +47,11 @@
 
             <TextView
                 android:id="@+id/departmentTextView"
+                style="@style/default_font"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="동국대학교 컴퓨터공학과"
                 android:layout_marginTop="5dp"
-                style="@style/default_font"
+                android:text="동국대학교 컴퓨터공학과"
                 android:textSize="15dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@id/userNameTextView"
@@ -56,14 +59,14 @@
 
             <TextView
                 android:id="@+id/userIntroductionTextView"
+                style="@style/default_font"
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="나 박재형인데 꼬우면 연락 ㄱㅋzzzzzzzzzzzzzzzzㅋ"
-                style="@style/default_font"
+                android:layout_marginTop="15dp"
                 android:maxLines="2"
-                app:layout_constraintTop_toBottomOf="@id/departmentTextView"
-                app:layout_constraintStart_toStartOf="@id/departmentTextView" />
+                android:text="안녕하세요 저는 컴퓨터공학과 19학번 박재형입니다."
+                app:layout_constraintStart_toStartOf="@id/departmentTextView"
+                app:layout_constraintTop_toBottomOf="@id/departmentTextView" />
 
             <LinearLayout
                 android:id="@+id/joinedClubLinearLayout"
@@ -87,8 +90,8 @@
                     android:id="@+id/joinedClubRecyclerView"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:layout_marginTop="5dp"
                     android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
                     android:orientation="horizontal"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 
@@ -97,45 +100,102 @@
 
             </LinearLayout>
 
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/editProfileButton"
+                style="@style/default_font"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="15dp"
+                android:background="@drawable/background_rectangle"
                 android:drawableStart="@drawable/baseline_person_outline_50"
+                android:drawablePadding="8dp"
+                android:gravity="start|center_vertical"
                 android:text="프로필 편집"
                 android:textSize="20dp"
-                style="@style/default_font"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/joinedClubLinearLayout"
                 app:layout_constraintTop_toBottomOf="@id/joinedClubLinearLayout" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/appSettingButton"
-                style="@style/default_font"
+
+            <LinearLayout
+                android:id="@+id/notificationLayout"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="15dp"
-                android:drawableStart="@drawable/outline_settings_50"
-                android:text="앱 설정"
-                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/background_rectangle"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="@+id/editProfileButton"
                 app:layout_constraintStart_toStartOf="@+id/editProfileButton"
-                app:layout_constraintTop_toBottomOf="@id/editProfileButton" />
+                app:layout_constraintTop_toBottomOf="@+id/editProfileButton">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/appInfoButton"
-                style="@style/default_font"
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/outline_notifications_50" />
+
+                <TextView
+                    style="@style/default_font"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:layout_gravity="center_vertical"
+                    android:text="푸시 알림 허용"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/noticifacionSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:thumb="@drawable/selector_thumb"
+                app:layout_constraintBottom_toBottomOf="@id/notificationLayout"
+                app:layout_constraintEnd_toEndOf="@+id/notificationLayout"
+                app:layout_constraintTop_toTopOf="@+id/notificationLayout"
+                app:switchMinWidth="52dp"
+                app:track="@drawable/selector_switch" />
+
+            <LinearLayout
                 android:layout_width="350dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="15dp"
-                android:drawableStart="@drawable/outline_info_50"
-                android:text="앱 정보"
-                android:textSize="20dp"
-                app:layout_constraintEnd_toEndOf="@+id/appSettingButton"
-                app:layout_constraintStart_toStartOf="@+id/appSettingButton"
-                app:layout_constraintTop_toBottomOf="@id/appSettingButton" />
+                android:layout_marginTop="20dp"
+                android:background="@drawable/background_rectangle"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/notificationLayout"
+                app:layout_constraintStart_toStartOf="@+id/notificationLayout"
+                app:layout_constraintTop_toBottomOf="@+id/notificationLayout">
 
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="3dp"
+                    android:src="@drawable/outline_info_50" />
+
+                <TextView
+                    style="@style/default_font"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="0.7"
+                    android:text="버전 정보"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/versionTextView"
+                    style="@style/default_font"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.4"
+                    android:layout_marginEnd="5dp"
+                    android:text="v.2023-09-20" />
+
+            </LinearLayout>
 
 
 

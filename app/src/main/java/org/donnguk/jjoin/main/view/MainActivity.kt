@@ -16,7 +16,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
         MainViewModel.MainViewModelFactory().create(MainViewModel::class.java)
     }
     private lateinit var navController: NavController
-
+    val REQ_PERMISSION_PUSH = 123
     override fun initView() {
         // Timber 활성화
         Timber.plant(Timber.DebugTree())
@@ -51,7 +51,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
                     supportActionBar?.setDisplayHomeAsUpEnabled(false)
                     binding.toolbarTextView.text = "마이 페이지"
                 }
-                R.id.notificationFragment -> {
+                R.id.notificationFragment, R.id.profileEditFragment -> {
                     binding.toolbarTextView.visibility = android.view.View.GONE
                     binding.toolbarImageView.visibility = android.view.View.GONE
                     binding.bottomNaviBar.visibility = android.view.View.GONE
