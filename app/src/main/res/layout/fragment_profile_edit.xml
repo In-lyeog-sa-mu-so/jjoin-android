@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
             android:text="프로필 편집"
-            android:textSize="30dp"
+            android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -43,7 +43,7 @@
             android:layout_width="150dp"
             android:layout_height="48dp"
             android:text="프로필 사진 변경"
-            android:textSize="15dp"
+            android:textSize="15sp"
             style="@style/default_font"
 
             android:background="@null"
@@ -61,32 +61,34 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:text="자기소개"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:layout_marginStart="30dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/editProfileImageView" />
 
         <EditText
+            android:id="@+id/introductionEditTextView"
             android:layout_width="240dp"
             android:layout_height="70dp"
             android:layout_marginStart="24dp"
             android:background="@drawable/edit_text_rectangle"
-            android:textSize="10dp"
+            android:textSize="15sp"
             android:maxLines="2"
+            android:maxLength="40"
             app:layout_constraintBottom_toBottomOf="@+id/nameTextView"
             app:layout_constraintStart_toEndOf="@+id/nameTextView"
             app:layout_constraintTop_toTopOf="@+id/nameTextView"
             app:layout_constraintVertical_bias="0.155" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/editProfileButton"
+            android:id="@+id/saveProfileButton"
             style="@style/default_font"
             android:layout_width="230dp"
             android:layout_height="48dp"
             android:background="@drawable/background_rectangle"
             android:gravity="center|center_vertical"
             android:text="저장하기"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:layout_marginBottom="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

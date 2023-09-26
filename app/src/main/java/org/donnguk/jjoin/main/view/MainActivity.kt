@@ -22,11 +22,6 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
         Timber.plant(Timber.DebugTree())
         super.initView()
 
-        setSupportActionBar(binding.toolbar).apply {
-            supportActionBar?.setDisplayShowTitleEnabled(false)
-            supportActionBar?.setDisplayHomeAsUpEnabled(false)
-        }
-
         this.onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 onSupportNavigateUp()
@@ -38,34 +33,23 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.homeFragment -> {
-                    binding.toolbarTextView.visibility = android.view.View.VISIBLE
-                    binding.toolbarImageView.visibility = android.view.View.VISIBLE
                     binding.bottomNaviBar.visibility = android.view.View.VISIBLE
-                    supportActionBar?.setDisplayHomeAsUpEnabled(false)
-                    binding.toolbarTextView.text = "홈"
                 }
                 R.id.profileFragment -> {
-                    binding.toolbarTextView.visibility = android.view.View.VISIBLE
-                    binding.toolbarImageView.visibility = android.view.View.VISIBLE
                     binding.bottomNaviBar.visibility = android.view.View.VISIBLE
-                    supportActionBar?.setDisplayHomeAsUpEnabled(false)
-                    binding.toolbarTextView.text = "마이 페이지"
                 }
                 R.id.notificationFragment, R.id.profileEditFragment -> {
-                    binding.toolbarTextView.visibility = android.view.View.GONE
-                    binding.toolbarImageView.visibility = android.view.View.GONE
                     binding.bottomNaviBar.visibility = android.view.View.GONE
-                    supportActionBar?.setDisplayHomeAsUpEnabled(true)
                 }
             }
         }
 
-        NavigationUI.setupActionBarWithNavController(this, navController)
         binding.bottomNaviBar.setupWithNavController(navController)
     }
 
     override fun initViewModel() {
         super.initViewModel()
+        binding.viewModel = viewModel
     }
 
     override fun initListener() {
@@ -76,9 +60,9 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
             }
         })
 
-        binding.toolbarImageView.setOnClickListener {
-            navController.navigate(R.id.action_homeFragment_to_notificationFragment)
-        }
+//        binding.toolbarImageView.setOnClickListener {
+//            navController.navigate(R.id.action_homeFragment_to_notificationFragment)
+//        }
     }
 
     override fun afterOnCreate() {

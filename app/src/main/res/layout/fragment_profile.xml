@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="동국대학교 컴퓨터공학과"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@id/userNameTextView"
                 app:layout_constraintTop_toBottomOf="@id/userNameTextView" />
@@ -106,13 +106,13 @@
                 style="@style/default_font"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="25dp"
                 android:background="@drawable/background_rectangle"
                 android:drawableStart="@drawable/baseline_person_outline_50"
                 android:drawablePadding="8dp"
                 android:gravity="start|center_vertical"
                 android:text="프로필 편집"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/joinedClubLinearLayout"
                 app:layout_constraintTop_toBottomOf="@id/joinedClubLinearLayout" />
@@ -122,7 +122,7 @@
                 android:id="@+id/notificationLayout"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="25dp"
                 android:background="@drawable/background_rectangle"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="@+id/editProfileButton"
@@ -142,7 +142,7 @@
                     android:layout_weight="0.5"
                     android:layout_gravity="center_vertical"
                     android:text="푸시 알림 허용"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
@@ -161,7 +161,7 @@
             <LinearLayout
                 android:layout_width="350dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="25dp"
                 android:background="@drawable/background_rectangle"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="@+id/notificationLayout"

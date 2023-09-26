@@ -37,6 +37,11 @@ class ProfileEditFragment : BaseFragment<FragmentProfileEditBinding, ProfileEdit
 
     override fun initListener(view: View) {
         super.initListener(view)
+
+        binding.saveProfileButton.setOnClickListener {
+            Toast.makeText(context, "프로필을 저장합니다.", Toast.LENGTH_SHORT).show()
+            navigateBackToProfile()
+        }
     }
 
     override fun afterViewCreated(view: View) {

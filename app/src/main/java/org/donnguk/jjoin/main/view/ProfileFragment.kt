@@ -37,19 +37,6 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding, ProfileViewModel>(R
                 startActivity(intent)
             })
         }
-
-        binding.editProfileButton.setOnClickListener {
-            findNavController().navigate(R.id.action_profileFragment_to_profileEditFragment)
-        }
-
-        binding.noticifacionSwitch.setOnCheckedChangeListener{
-            _, isChecked ->
-            if(isChecked){
-                Toast.makeText(context, "알림이 켜졌습니다.", Toast.LENGTH_SHORT).show()
-            }else{
-                Toast.makeText(context, "알림이 꺼졌습니다.", Toast.LENGTH_SHORT).show()
-            }
-        }
     }
 
 
@@ -63,6 +50,19 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding, ProfileViewModel>(R
         super.initListener(view)
         viewModel.joinedClubs.observe(viewLifecycleOwner) {
             (binding.joinedClubRecyclerView.adapter as JoinedClubAdapter).submitList(it)
+        }
+
+        binding.editProfileButton.setOnClickListener {
+            findNavController().navigate(R.id.action_profileFragment_to_profileEditFragment)
+        }
+
+        binding.noticifacionSwitch.setOnCheckedChangeListener{
+                _, isChecked ->
+            if(isChecked){
+                Toast.makeText(context, "알림이 켜졌습니다.", Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(context, "알림이 꺼졌습니다.", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
